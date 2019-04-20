@@ -3,6 +3,8 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase';
 import config from './components/firebase/config';
 import uiConfig from './components/firebase/GoogleLogin';
+import Credit from './components/Credit';
+import Clock from './components/Clock';
 import './Home.css';
 
 firebase.initializeApp(config);
@@ -12,10 +14,12 @@ class Home extends Component {
     return (
       <div className = "container-fluid">
         <div className = "text-center">
+          <Clock />
           <h1>Assignmant Web</h1>
           <p>กรุณา Log in ก่อนเข้าใช้</p>
+          <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
+          <Credit name="Srithep Witayapanpracha" id="5910110669" />
         </div>
-        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/>
       </div>
     );
   }
