@@ -30,7 +30,7 @@ class Home extends Component {
           <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
           <Credit name="Srithep Witayapanpracha" id="5910110669" />
         </div>
-        {this.state.isSignedIn ? ( <Redirect to="/api" />) : (<StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()} />)}
+        {this.state.isSignedIn ? ( <Redirect to="/hero" />) : (<StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()} />)}
       </div>
     );
   }

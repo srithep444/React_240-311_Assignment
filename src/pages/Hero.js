@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import { withRouter } from 'react-router-dom';
+import Api from '../components/firebase/API';
 
-class Api extends Component {
-  
+class Hero extends Component {
+
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
@@ -23,6 +24,8 @@ class Api extends Component {
                 src={firebase.auth().currentUser.photoURL}
                 width="10%"
               />
+
+              <Api />
             </div>
       </span>
       
@@ -30,4 +33,4 @@ class Api extends Component {
   }
 }
 
-export default withRouter(Api);
+export default withRouter(Hero);
